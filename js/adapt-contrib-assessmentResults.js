@@ -185,7 +185,7 @@ define([
 
             this.checkRetryEnabled();
 
-            this.model.set("body", this.model.get("_completionBody"));
+            this.model.set("body", Handlebars.compile(this.model.get("_completionBody"))(this.model.toJSON()));
         },
         
         /**
